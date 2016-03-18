@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+    <meta name="google-signin-client_id" content="726209865070-8jb7avil5li19b5f7s8mha7ebrf262ji.apps.googleusercontent.com">
+    <title></title>
+
+    <link href="lib/ionic/css/ionic.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+
+    <!-- IF using Sass (run gulp sass first), then uncomment below and remove the CSS includes above
+    <link href="css/ionic.app.css" rel="stylesheet">
+    -->
+    <!-- ionic/angularjs js -->
+    <script src="lib/ionic/js/ionic.bundle.js"></script>
+
+    <!-- cordova script (this will be a 404 during development) -->
+    <script src="cordova.js"></script>
+
+    <!-- your app's js -->
+    <script src="js/app.js"></script>
+    <script src="js/glogin.js"></script>
+  </head>
+  <body ng-app="starter">
+      <script>
+  window.fbAsyncInit = function() {
+    FB.init({
+      appId      : '245553459113645',
+      xfbml      : true,
+      version    : 'v2.5'
+    });
+  };
+
+  (function(d, s, id){
+     var js, fjs = d.getElementsByTagName(s)[0];
+     if (d.getElementById(id)) {return;}
+     js = d.createElement(s); js.id = id;
+     js.src = "//connect.facebook.net/en_US/sdk.js";
+     fjs.parentNode.insertBefore(js, fjs);
+   }(document, 'script', 'facebook-jssdk'));
+</script>
+    <ion-pane>
+      <ion-header-bar class="bar-dark">
+          <button class="button icon ion-navicon"></button>
+        <h1 class="title icon ion-person">  TelBuddy</h1>
+          <button class="button icon ion-home"></button>
+      </ion-header-bar>
+        <div class="bar bar-subheader bar-balanced">
+            <h2 class="title">Please login to continue</h2>
+        </div>
+      <ion-content class="padding has-subheader">
+          <a href="#" onclick="signOut();" class="pull-left" id="signOut" style="visibility:hidden">Sign out</a>
+          <div class="padding"></div>
+           <div class="padding"></div>
+           <div class="padding"></div>
+          <center>
+              <div id="gButt">
+              <div class="g-signin2" data-onsuccess="onSignIn"></div>
+              </div>
+              <br>
+                <div class="padding"></div>
+                <div class="padding"></div>
+                <div class="padding"></div>
+              <div id = "fb-root"></div>
+              <div class="fb-login-button" data-max-rows="1" data-size="xlarge" data-show-faces="false" data-auto-logout-link="true"></div><br>
+        </center>
+      </ion-content>
+        <ion-footer-bar class="bar-dark">
+        <h1 class="title">&copy; All rights reserved 2016</h1>
+     </ion-footer-bar>
+    </ion-pane>
+  </body>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
+    <script src="https://connect.facebook.net/en_US/sdk.js"></script>
+</html>
